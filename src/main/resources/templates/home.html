@@ -1,0 +1,32 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Currency App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+
+<p th:text="${testName}">Welcome to our grocery store!</p>
+<p> Dostępne waluty </p>
+<p> wpisz /fakeapi/curr1_curr2 aby uzyskac akutalne info o kursie </p>
+
+
+<table>
+    <tr>
+        <th>curr1</th>
+        <th>curr2</th>
+    </tr>
+    <tr th:each="el : ${currData}">
+        <td th:text="${el.historyEnt.curr1.currName}"></td>
+        <td th:text="${el.historyEnt.curr2.currName}"></td>
+    </tr>
+</table>
+
+</body>
+
+</html>

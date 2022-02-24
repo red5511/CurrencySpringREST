@@ -1,0 +1,39 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Currency App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+
+<p> Pełne informajcie o aktualnych walutach </p>
+
+
+<table>
+    <tr>
+        <th>currNames</th>
+        <th>curr1</th>
+        <th>curr2</th>
+        <th>price</th>
+        <th>date</th>
+
+    </tr>
+    <tr th:each="el : ${histData}">
+        <td th:text="${el.currenciesName}"></td>
+        <td th:text="${el.curr1.currName}"></td>
+        <td th:text="${el.curr2.currName}"></td>
+        <td th:text="${el.price}"></td>
+        <td th:text="${el.date}"></td>
+
+
+    </tr>
+</table>
+
+</body>
+
+</html>
